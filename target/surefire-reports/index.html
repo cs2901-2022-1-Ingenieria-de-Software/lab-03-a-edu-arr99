@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -113,6 +113,11 @@
                       <span>
                         <img src="passed.png" width="3%"/>
                         <a href="#" panel-name="suite-Command_line_suite" title="lab.ManageDemandTest" class="method navigator-link" hash-for-method="test_AllOrdersFromPeru">test_AllOrdersFromPeru</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Command_line_suite" title="lab.ManageDemandTest" class="method navigator-link" hash-for-method="test_emptyList">test_emptyList</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Command_line_suite -->
@@ -152,6 +157,13 @@
                   <a name="test_AllOrdersFromPeru">
                   </a> <!-- test_AllOrdersFromPeru -->
                   <span class="method-name">test_AllOrdersFromPeru</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="test_emptyList">
+                  </a> <!-- test_emptyList -->
+                  <span class="method-name">test_emptyList</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -209,24 +221,28 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'test_AllOrdersFromBrazil')
+data.setCell(0, 1, 'test_AllOrdersFromPeru')
 data.setCell(0, 2, 'lab.ManageDemandTest')
 data.setCell(0, 3, 5);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'test_AllOrdersFromPeru')
+data.setCell(1, 1, 'test_AllOrdersFromBrazil')
 data.setCell(1, 2, 'lab.ManageDemandTest')
-data.setCell(1, 3, 0);
+data.setCell(1, 3, 4);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'test_AllOrdersFromColombia')
 data.setCell(2, 2, 'lab.ManageDemandTest')
 data.setCell(2, 3, 0);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'test_emptyList')
+data.setCell(3, 2, 'lab.ManageDemandTest')
+data.setCell(3, 3, 0);
 window.suiteTableData['Command_line_suite']= { tableData: data, tableDiv: 'times-div-Command_line_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 5 ms</span>
+              <span class="suite-total-time">Total running time: 9 ms</span>
               <div id="times-div-Command_line_suite">
               </div> <!-- times-div-Command_line_suite -->
             </div> <!-- times-div -->
@@ -259,15 +275,19 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">test_AllOrdersFromBrazil</span>
-                <span class="method-start">27 ms</span>
+                <span class="method-start">36 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">test_AllOrdersFromColombia</span>
-                <span class="method-start">32 ms</span>
+                <span class="method-start">45 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">test_AllOrdersFromPeru</span>
-                <span class="method-start">37 ms</span>
+                <span class="method-start">45 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">test_emptyList</span>
+                <span class="method-start">50 ms</span>
               </div> <!-- test-method -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

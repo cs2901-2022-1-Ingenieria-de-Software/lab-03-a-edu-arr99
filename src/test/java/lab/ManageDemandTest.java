@@ -9,6 +9,7 @@ import lab.demand.Tax;
 import lab.util.TestUtil;
 import lab.demand.Order;
 
+import java.util.Collections;
 import java.util.List;
 
 @Test
@@ -41,5 +42,11 @@ public class ManageDemandTest {
         List<Order> ordersFromBrazil = TestUtil.buildOrdersBrazil();
         double result = demand.calculateTaxes(ordersFromBrazil);
         Assert.assertEquals(Math.round(result), 5.0);
+    }
+
+    public void test_emptyList() {
+        List<Order> emptyOrders = Collections.<Order>emptyList();
+        double result = demand.calculateTaxes(emptyOrders);
+        Assert.assertEquals(Math.round(result), 0.0);
     }
 }
