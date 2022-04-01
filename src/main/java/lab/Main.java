@@ -17,10 +17,10 @@ public class Main {
 
         List<Order> testOrders = buildSampleOrders();
         
-        double resultFirst = mg.calculateTotal(testOrders);
+        double resultFirst = mg.calculateTaxes(testOrders);
         System.out.println(String.format("RESULTADO TOTAL 1 => %s", resultFirst));
 
-        double resultSecond = mg.calculateTotalForWithAdditionalByCountry(testOrders, 0.10, 0.20, 0.30);
+        double resultSecond = mg.calculateTotalForWithAdditionalByCountry(testOrders);
         System.out.println(String.format("RESULTADO TOTAL 2 => %s", resultSecond));
     }
 

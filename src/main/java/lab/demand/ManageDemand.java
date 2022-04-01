@@ -5,51 +5,48 @@ import java.util.List;
 public class ManageDemand {
 
     private Tax tax;
+    private double defaultAdditionalColombia = 0.10;
+    private double defaultAdditionalPeru = 0.20;
+    private double defaultAdditionalBrazil = 0.30;
 
     public ManageDemand(Tax tax) {
         this.tax = tax;
     }
+    public double calculateQuantities(List<Order> orders){
+        // Calculate Quantities
+        double quantities = 0.0;
+        for (Order order : orders) {
+            double temp = order.getQuantity();
+            quantities += temp;
+        }
 
-    public double calculateTotal(List<Order> orders){
+        return quantities;
+    }
+
+    public double calculateTaxes(List<Order> orders) {
         // Calculate Taxes
         double taxes = 0.0;
         for (Order order : orders) {
             double tax = this.tax.calculateTax(order.getCountry());
             taxes += tax;
         }
-
-        // Calculate Total
-        double quantities = 0.0;
-        for (Order order : orders) {
-            double temp = order.getQuantity();
-            quantities += temp;
-        }
-
-        return quantities * taxes;
+        return taxes * calculateQuantities(orders);
     }
 
-    public double calculateTotalForWithAdditionalByCountry(List<Order> orders, double defaultAdditionalColombia, double defaultAdditionalPeru, double defaultAdditionalBrazil){
+
+    public double calculateTotalForWithAdditionalByCountry(List<Order> orders) {
         // Calculate additionals by country
         double taxes = 0.0;
         for (Order order : orders) {
-            String currCountry = order.getCountry();
-            if (currCountry.equals("PE")) {
+            if (order.getCountry().equals("PE")) {
                 taxes += defaultAdditionalPeru;
-            } else if (currCountry.equals("BR")) {
+            } else if (order.getCountry().equals("BR")) {
                 taxes += defaultAdditionalBrazil;
             } else {
                 taxes += defaultAdditionalColombia;
             }
         }
-
-        // Calculate Total
-        double quantities = 0.0;
-        for (Order order : orders) {
-            double temp = order.getQuantity();
-            quantities += temp;
-        }
-
-        return quantities * taxes;
+        return taxes * calculateQuantities(orders);
     }
 
 }

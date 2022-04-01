@@ -26,10 +26,20 @@ public class ManageDemandTest {
     
     public void test_AllOrdersFromPeru() {
         List<Order> ordersFromPeru = TestUtil.buildOrdersPeru();
-        double result = demand.calculateTotal(ordersFromPeru);
+        double result = demand.calculateTaxes(ordersFromPeru);
         Assert.assertEquals(Math.round(result), 7.0);
     }
 
     // Add Tests !!
+    public void test_AllOrdersFromColombia() {
+        List<Order> ordersFromColombia = TestUtil.buildOrdersColombia();
+        double result = demand.calculateTaxes(ordersFromColombia);
+        Assert.assertEquals(Math.round(result), 0.0);
+    }
 
+    public void test_AllOrdersFromBrazil() {
+        List<Order> ordersFromBrazil = TestUtil.buildOrdersBrazil();
+        double result = demand.calculateTaxes(ordersFromBrazil);
+        Assert.assertEquals(Math.round(result), 5.0);
+    }
 }
